@@ -1,0 +1,33 @@
+public class edii {
+
+    public static void main(String[] args) {
+        System.out.println("Nama  : Edi");
+        System.out.println("Kelas : 2Ti5");
+        System.out.println("MK    : Numerik");
+        double[][] system = {{1, 1, 1, 6}, {1, 2, -1, 2}, {2, 1, 2, 10}};
+        int n = system.length;
+
+        for (int k = 0; k < n - 1; k++) {
+            for (int i = k + 1; i < n; i++) {
+                double factor = system[i][k] / system[k][k];
+                for (int j = k; j < n + 1; j++) {
+                    system[i][j] -= factor * system[k][j];
+                }
+            }
+        }
+
+        double[] solution = new double[n];
+        for (int i = n - 1; i >= 0; i--) {
+            solution[i] = system[i][n];
+            for (int j = i + 1; j < n; j++) {
+                solution[i] -= system[i][j] * solution[j];
+            }
+            solution[i] /= system[i][i];
+        }
+
+        System.out.println("Solusi :");
+        for (int i = 0; i < n; i++) {
+            System.out.printf("x%d = %.2f\n", i + 1, solution[i]);
+        }
+    }
+}

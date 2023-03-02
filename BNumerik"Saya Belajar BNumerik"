@@ -1,0 +1,5 @@
+class BNumerik {
+public static void main (String[] args) {
+System.out.println ("Saya Belajar Numerik Menggunakan Java");
+}
+}

@@ -1,0 +1,11 @@
+class persegipanjang {
+public static void main (String[]  args) {
+ double panjang, lebar, keliling;
+System.out.println ("Menghitung keliling persegi panjang");
+panjang =29;
+lebar =5.4;
+
+keliling =2 * (panjang+lebar);
+System.out.println("keliling = " +keliling);
+}
+}

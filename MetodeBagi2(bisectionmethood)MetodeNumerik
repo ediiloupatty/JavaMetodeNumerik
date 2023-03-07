@@ -1,0 +1,34 @@
+public class MetodeBagi2 {
+    public static double f(double x) {
+        return x*x + x - 6;
+    }
+
+    public static double bisection(double a, double b, double tol) {
+        if (f(a)*f(b) >= 0) {
+            System.out.println("Error: f(a) dan f(b) memiliki tanda yang sama.");
+            return Double.NaN;
+        }
+        double c = a;
+        while ((b-a) >= tol) {
+            c = (a+b)/2;
+            if (f(c) == 0.0)
+                break;
+            if (f(c)*f(a) < 0)
+                b = c;
+            else
+                a = c;
+        }
+        return c;
+    }
+
+    public static void main(String[] args) {
+System.out.println("Nama	: Edi");
+System.out.println("Kelas	: 2TI5j");
+System.out.println("NIM	: 22024169");
+        double a = -5.0;
+        double b = 0.0;
+        double tol = 1e-6;
+        double solusi = bisection(a, b, tol);
+        System.out.println("Solusi persamaan non-linear adalah: " + solusi);
+    }
+}
